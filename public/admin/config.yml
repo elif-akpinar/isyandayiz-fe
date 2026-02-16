@@ -1,0 +1,47 @@
+backend:
+  name: test-repo
+
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "haberler"
+    label: "Haberler"
+    folder: "src/content/haberler"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "string", default: "Femsol Merkez"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "blog"
+    label: "Blog Yazıları"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "string", default: "Femsol Merkez"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "etkinlikler"
+    label: "Etkinlikler"
+    folder: "src/content/events"
+    create: true
+    slug: "event-{{slug}}"
+    fields:
+      - {label: "Başlık", name: "title", widget: "string"}
+      - {label: "Etkinlik Tarihi", name: "eventDate", widget: "datetime"}
+      - {label: "İlgili Blog Yazısı (Slug)", name: "blogSlug", widget: "string", hint: "Örn: 2024-02-16-ilk-yazi"}
+      - {label: "Kısa Açıklama", name: "description", widget: "string"}
