@@ -3,6 +3,7 @@ import { getPosts } from '../lib/content';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Tag } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function Arsiv() {
     const [posts, setPosts] = useState([]);
@@ -23,6 +24,7 @@ export default function Arsiv() {
 
     return (
         <div style={{ paddingTop: '120px', minHeight: '100vh' }}>
+            <SEO title="Arşiv" description="Femsol hareketinin tüm geçmiş yazıları ve kayıtları." url="/arsiv" />
             <div className="container" style={{ maxWidth: '900px' }}>
                 <header style={{ marginBottom: '4rem' }}>
                     <h1 style={{ fontSize: '4rem', marginBottom: '1rem' }}>Yazı <span style={{ color: 'var(--primary)' }}>Arşivi</span></h1>

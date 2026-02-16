@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function Iletisim() {
     return (
         <div style={{ paddingTop: '120px', minHeight: '100vh', paddingBottom: '100px' }}>
+            <SEO title="İletişim" description="Femsol ile iletişime geçin. Dayanışmaya katılmak, soru sormak veya öneride bulunmak için bize yazın." url="/iletisim" />
             <div className="container">
                 <header style={{ marginBottom: '5rem', textAlign: 'center' }}>
                     <h1 style={{ fontSize: '4rem', marginBottom: '1rem' }}>Bize <span style={{ color: 'var(--primary)' }}>Ulaşın</span></h1>

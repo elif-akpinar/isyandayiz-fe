@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { getPosts } from '../lib/content';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 export default function Blog() {
     const [posts, setPosts] = useState([]);
@@ -15,6 +16,7 @@ export default function Blog() {
 
     return (
         <div style={{ paddingTop: '120px', minHeight: '100vh' }}>
+            <SEO title="Blog" description="Toplumsal cinsiyet teoryesi, radikal politika ve dayanışma üzerine derinlemesine analizler." url="/blog" />
             <div className="container">
                 <header style={{ marginBottom: '4rem' }}>
                     <h1 style={{ fontSize: '4rem', marginBottom: '1rem' }}>Fikirler & <span style={{ color: 'var(--primary)' }}>Yazılar</span></h1>

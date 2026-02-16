@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { getPostBySlug } from '../lib/content';
 import ReactMarkdown from 'react-markdown';
 import { ChevronLeft, Calendar, User } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function BlogPost() {
     const { slug } = useParams();
@@ -16,6 +17,12 @@ export default function BlogPost() {
 
     return (
         <article style={{ paddingTop: '120px', paddingBottom: '100px' }}>
+            <SEO
+                title={post.title}
+                description={post.description}
+                image={post.image}
+                url={`/blog/${slug}`}
+            />
             <div className="container" style={{ maxWidth: '800px' }}>
                 <Link to="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '2rem', color: 'var(--text-muted)' }}>
                     <ChevronLeft size={20} /> Yazılara Dön
@@ -52,11 +59,11 @@ export default function BlogPost() {
         .markdown-content {
           font-size: 1.25rem;
           line-height: 1.8;
-          color: #ddd;
+          color: var(--text-main);
         }
-        .markdown-content h2 { color: white; margin: 2.5rem 0 1.5rem 0; font-size: 2rem; }
-        .markdown-content h3 { color: white; margin: 2rem 0 1rem 0; font-size: 1.5rem; }
-        .markdown-content p { margin-bottom: 1.5rem; }
+        .markdown-content h2 { color: var(--text-main); margin: 2.5rem 0 1.5rem 0; font-size: 2rem; }
+        .markdown-content h3 { color: var(--text-main); margin: 2rem 0 1rem 0; font-size: 1.5rem; }
+        .markdown-content p { margin-bottom: 1.5rem; opacity: 0.9; }
         .markdown-content ul, .markdown-content ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
         .markdown-content li { margin-bottom: 0.5rem; }
         .markdown-content blockquote {

@@ -6,6 +6,7 @@ import { getPosts, getEvents } from '../lib/content';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import EventCountdown from '../components/EventCountdown';
+import SEO from '../components/SEO';
 
 export default function Home() {
     const [latestPosts, setLatestPosts] = useState([]);
@@ -37,6 +38,7 @@ export default function Home() {
 
     return (
         <div style={{ paddingTop: '80px' }}>
+            <SEO />
             <EventCountdown />
             {/* Hero Carousel Section */}
             <section style={{

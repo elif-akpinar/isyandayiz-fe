@@ -62,7 +62,7 @@ export default function EventCountdown() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: '33vh', opacity: 1 }}
             style={{
-                background: 'linear-gradient(135deg, #1a0022 0%, #000 100%)',
+                background: 'var(--bg-card)',
                 position: 'relative',
                 overflow: 'hidden',
                 borderBottom: '1px solid var(--primary)',
@@ -79,7 +79,7 @@ export default function EventCountdown() {
                 width: '600px',
                 height: '600px',
                 background: 'radial-gradient(circle, var(--primary) 0%, transparent 70%)',
-                opacity: 0.1,
+                opacity: 0.15,
                 filter: 'blur(100px)',
                 zIndex: 1
             }} />
@@ -96,7 +96,7 @@ export default function EventCountdown() {
                         transition={{ delay: 0.3 }}
                     >
                         <h4 style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '2px', marginBottom: '1rem', fontSize: '0.9rem' }}>GELECEK ETKİNLİK</h4>
-                        <h2 style={{ fontSize: '2.5rem', lineHeight: 1.1, marginBottom: '1.5rem' }}>{event.title}</h2>
+                        <h2 style={{ fontSize: '2.5rem', lineHeight: 1.1, marginBottom: '1.5rem', color: 'var(--text-main)' }}>{event.title}</h2>
                         <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', maxWidth: '500px' }}>{event.description}</p>
 
                         <Link to={`/blog/${event.blogSlug}`} className="btn-primary" style={{ padding: '0.8rem 1.5rem', fontSize: '0.9rem' }}>
@@ -119,8 +119,8 @@ export default function EventCountdown() {
                                 animate={{ scale: 1, opacity: 1 }}
                                 transition={{ delay: 0.5 + (i * 0.1) }}
                                 style={{
-                                    background: 'rgba(255,255,255,0.03)',
-                                    border: '1px solid rgba(255,255,255,0.1)',
+                                    background: 'var(--glass)',
+                                    border: '1px solid var(--border)',
                                     borderRadius: '16px',
                                     padding: '1.5rem',
                                     minWidth: '100px',
@@ -146,7 +146,7 @@ export default function EventCountdown() {
                     top: '20px',
                     right: '20px',
                     background: 'none',
-                    color: 'rgba(255,255,255,0.3)',
+                    color: 'var(--text-muted)',
                     zIndex: 20
                 }}
             >

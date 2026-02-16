@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { Target, Heart, Globe } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function Hakkimizda() {
     return (
         <div style={{ paddingTop: '120px', minHeight: '100vh', paddingBottom: '100px' }}>
+            <SEO title="Hakkımızda" description="Femsol'un misyonu, vizyonu ve toplumsal dönüşüm için savunduğu temel değerler." url="/hakkimizda" />
             <div className="container">
                 <header style={{ marginBottom: '5rem', textAlign: 'center' }}>
                     <h1 style={{ fontSize: '4rem', marginBottom: '1rem' }}>Biz <span style={{ color: 'var(--primary)' }}>Kimiz?</span></h1>
