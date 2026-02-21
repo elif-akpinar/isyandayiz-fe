@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 export default function Iletisim() {
     return (
         <div style={{ paddingTop: '120px', minHeight: '100vh', paddingBottom: '100px' }}>
-            <SEO title="İletişim" description="Femsol ile iletişime geçin. Dayanışmaya katılmak, soru sormak veya öneride bulunmak için bize yazın." url="/iletisim" />
+            <SEO title="İletişim" description="Isyandayiz ile iletişime geçin. Dayanışmaya katılmak, soru sormak veya öneride bulunmak için bize yazın." url="/iletisim" />
             <div className="container">
                 <header style={{ marginBottom: '5rem', textAlign: 'center' }}>
                     <h1 style={{ fontSize: '4rem', marginBottom: '1rem' }}>Bize <span style={{ color: 'var(--primary)' }}>Ulaşın</span></h1>
@@ -28,7 +28,7 @@ export default function Iletisim() {
                         <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>İletişim Bilgilerimiz</h2>
                         <div style={{ display: 'grid', gap: '2rem' }}>
                             {[
-                                { icon: <Mail color="var(--primary)" />, title: 'E-posta', val: 'merkez@femsol.org' },
+                                { icon: <Mail color="var(--primary)" />, title: 'E-posta', val: 'merkez@isyandayiz.org' },
                                 { icon: <Phone color="var(--primary)" />, title: 'Telefon', val: '+90 212 XXX XX XX' },
                                 { icon: <MapPin color="var(--primary)" />, title: 'Merkez', val: 'Kadıköy, İstanbul' }
                             ].map((item, idx) => (

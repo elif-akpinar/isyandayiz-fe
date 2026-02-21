@@ -1,13 +1,15 @@
 {
-  "name": "femsol",
+  "name": "isyandayiz",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/generate-sitemap.js && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cms": "decap-server",
+    "sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "embla-carousel-autoplay": "^8.6.0",
@@ -25,6 +27,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.2.2",
+    "decap-server": "^3.5.0",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",

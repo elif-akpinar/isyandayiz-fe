@@ -8,7 +8,7 @@ description: "Kapitalizmin kıskacında nefes almaya çalışırken, kooperatifl
 ---
 # Dayanışma Ekonomisi
 
-Sadece tüketim değil, üretim ilişkilerimizi de değiştirmek zorundayız. Kar hırsı yerine ihtiyacı ve dayanışmayı merkeze alan bir ekonomi vizyonu, Femsol'un en temel vaatlerinden biridir.
+Sadece tüketim değil, üretim ilişkilerimizi de değiştirmek zorundayız. Kar hırsı yerine ihtiyacı ve dayanışmayı merkeze alan bir ekonomi vizyonu, Isyandayiz'un en temel vaatlerinden biridir.
 
 ## Yerel Örgütlenme
 Mahalle mahalle, ev ev kuracağımız dayanışma ağları, bizi büyük sermaye gruplarına bağımlı olmaktan kurtaracaktır.

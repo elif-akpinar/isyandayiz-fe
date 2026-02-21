@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://femsol.org/</loc>
+    <loc>https://isyandayiz.org/</loc>
     <lastmod>2024-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://femsol.org/haberler</loc>
+    <loc>https://isyandayiz.org/haberler</loc>
     <lastmod>2024-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://femsol.org/blog</loc>
+    <loc>https://isyandayiz.org/blog</loc>
     <lastmod>2024-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://femsol.org/arsiv</loc>
+    <loc>https://isyandayiz.org/arsiv</loc>
     <lastmod>2024-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://femsol.org/hakkimizda</loc>
+    <loc>https://isyandayiz.org/hakkimizda</loc>
     <lastmod>2024-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://femsol.org/iletisim</loc>
+    <loc>https://isyandayiz.org/iletisim</loc>
     <lastmod>2024-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

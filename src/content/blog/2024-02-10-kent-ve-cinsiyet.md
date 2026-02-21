@@ -4,7 +4,7 @@ title: "Toplumsal Cinsiyet ve Mekan: Şehirleri Kimin İçin Tasarlıyoruz?"
 author: "Aslı Yılmaz"
 date: 2024-02-10T15:30:00.000Z
 type: blog
-description: "Şehir planlaması tarafsız bir süreç değildir. Femsol olarak kent hakkını feminist bir perspektifle ele alıyoruz."
+description: "Şehir planlaması tarafsız bir süreç değildir. Isyandayiz olarak kent hakkını feminist bir perspektifle ele alıyoruz."
 ---
 # Toplumsal Cinsiyet ve Mekan
 

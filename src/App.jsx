@@ -32,16 +32,18 @@ function App() {
           <div className="container">
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '4rem' }}>
               <div>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '1.5rem' }}>FEMSOL</h3>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary)', marginBottom: '1.5rem' }}>İSYANDAYIZ</h3>
                 <p style={{ color: 'var(--text-muted)' }}>Toplumsal dönüşümün öncüsü.</p>
               </div>
               <div>
                 <h4 style={{ marginBottom: '1.2rem' }}>Bağlantılar</h4>
                 <ul style={{ listStyle: 'none', color: 'var(--text-muted)' }}>
                   <li style={{ marginBottom: '0.8rem' }}><a href="/">Manifesto</a></li>
-                  <li style={{ marginBottom: '0.8rem' }}><a href="/blog">Haberler</a></li>
-                  <li style={{ marginBottom: '0.8rem' }}><a href="/admin/">Admin Sayfası</a></li>
-                  <li style={{ marginBottom: '0.8rem' }}><a href="#">İletişim</a></li>
+                  <li style={{ marginBottom: '0.8rem' }}><a href="/haberler">Haberler</a></li>
+                  {import.meta.env.DEV && (
+                    <li style={{ marginBottom: '0.8rem' }}><a href="/admin/index.html">Admin Sayfası</a></li>
+                  )}
+                  <li style={{ marginBottom: '0.8rem' }}><a href="/iletisim">İletişim</a></li>
                 </ul>
               </div>
               <div>
@@ -53,7 +55,7 @@ function App() {
               </div>
             </div>
             <div style={{ marginTop: '80px', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
-              &copy; 2024 FEMSOL Movement. Tüm hakları dayanışmaya aittir.
+              &copy; 2024 İSYANDAYIZ Movement. Tüm hakları dayanışmaya aittir.
             </div>
           </div>
         </footer>

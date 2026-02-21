@@ -1,16 +1,49 @@
-# React + Vite
+# ✊ İSYANDAYIZ Hareket Sitesi - Yönetim Rehberi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu rehber, teknik bilgisi olmayan kullanıcıların **İSYANDAYIZ** web sitesine nasıl içerik (Haber, Blog, Etkinlik) ekleyebileceğini anlatır.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Başlarken (İlk Kurulum)
 
-## React Compiler
+Eğer bilgisayarınızda çalışma ortamı kurulu değilse, sadece bir kez şu adımı yapmanız gerekir:
+1. [Node.js](https://nodejs.org/) adresine gidin.
+2. **"LTS"** yazan butona tıklayıp indirin ve kurun.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## 🖥️ İçerik Nasıl Eklenir? (Yönetim Paneli)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Siteye yazı eklemek veya düzenlemek için şu adımları takip edin:
+
+1. **Başlatma:** Proje klasöründeki `yönetim-panelini-başlat.bat` dosyasına çift tıklayın.
+2. **Bekleme:** Karşınıza siyah bir pencere gelecek ve gerekli hazırlıkları yapacaktır. Yaklaşık 10 saniye sonra tarayıcınızda yönetim paneli otomatik olarak açılacaktır.
+3. **Kullanım:**
+   - **Haberler:** Güncel duyurular ve kısa haberler için.
+   - **Blog Yazıları:** Fikir yazıları, analizler ve uzun makaleler için.
+   - **Etkinlikler:** Anasayfadaki geri sayım sayacı için.
+
+### 📝 Yeni Yazı Ekleme Kuralları
+- **Başlık:** Yazınızın ana başlığı.
+- **Yazar:** Kendi adınızı veya "Isyandayiz Merkez" yazabilirsiniz.
+- **Tarih:** Yazının yayınlanma tarihi.
+- **Öne Çıkan Görsel:** Yazı için bir kapak fotoğrafı seçebilirsiniz.
+- **Gövde (Body):** Yazınızın ana metni. Burada kalın yazı veya başlık gibi biçimlendirmeler yapabilirsiniz.
+
+**Önemli:** Yazınızı bitirdiğinizde sağ üstteki **"Publish"** butonuna basmayı unutmayın!
+
+---
+
+## 🎨 Tema (Karanlık/Aydınlık) Modu
+Sitenin sağ üst köşesinde bulunan **Güneş/Ay** ikonuna tıklayarak görüntüyü değiştirebilirsiniz. Bu özellik kullanıcıların okuma konforu için eklenmiştir.
+
+---
+
+## 🛠️ Teknik Notlar (Geliştiriciler İçin)
+- Bu site **React** ve **Vite** kullanılarak inşa edilmiştir.
+- İçerikler `/cms-admin` klasöründeki yapılandırma ile yönetilir ancak içerik dosyaları `/src/content` altında `.md` formatında saklanır.
+- **Yayınlama:** Siteyi canlıya almak için `npm run build` komutunu kullanıp `dist` klasörünü sunucunuza yüklemeniz yeterlidir.
+
+---
+
+**Dayanışma yaşatır!** ✊✨

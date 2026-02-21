@@ -5,12 +5,12 @@ import SEO from '../components/SEO';
 export default function Hakkimizda() {
     return (
         <div style={{ paddingTop: '120px', minHeight: '100vh', paddingBottom: '100px' }}>
-            <SEO title="Hakkımızda" description="Femsol'un misyonu, vizyonu ve toplumsal dönüşüm için savunduğu temel değerler." url="/hakkimizda" />
+            <SEO title="Hakkımızda" description="Isyandayiz'un misyonu, vizyonu ve toplumsal dönüşüm için savunduğu temel değerler." url="/hakkimizda" />
             <div className="container">
                 <header style={{ marginBottom: '5rem', textAlign: 'center' }}>
                     <h1 style={{ fontSize: '4rem', marginBottom: '1rem' }}>Biz <span style={{ color: 'var(--primary)' }}>Kimiz?</span></h1>
                     <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>
-                        Femsol, sadece bir isim değil; eşitlik ve adalet için atan milyonlarca kalbin ortak sesidir.
+                        Isyandayiz, sadece bir isim değil; eşitlik ve adalet için atan milyonlarca kalbin ortak sesidir.
                     </p>
                 </header>
 
@@ -30,7 +30,7 @@ export default function Hakkimizda() {
                             <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', lineHeight: 1.2 }}>Eşitliğin Estetiği ve Gücü</h2>
                             <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.8 }}>
                                 Toplumsal hiyerarşilerin yıkıldığı, her bireyin emeğinin ve kimliğinin değer gördüğü bir dünya inşa etmek.
-                                Femsol olarak, radikal dönüşümü teoriden pratiğe dökmek için örgütleniyoruz.
+                                Isyandayiz olarak, radikal dönüşümü teoriden pratiğe dökmek için örgütleniyoruz.
                                 Politikamızı sokaktan, gücümüzü dayanışmadan alıyoruz.
                             </p>
                         </motion.div>

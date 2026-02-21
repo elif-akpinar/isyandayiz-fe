@@ -49,7 +49,7 @@ export default function Blog() {
                                         <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     ) : (
                                         <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#444', fontSize: '3rem', fontWeight: 800 }}>
-                                            FEMSOL
+                                            İSYANDAYIZ
                                         </div>
                                     )}
                                 </div>

@@ -24,7 +24,7 @@ export default function Arsiv() {
 
     return (
         <div style={{ paddingTop: '120px', minHeight: '100vh' }}>
-            <SEO title="Arşiv" description="Femsol hareketinin tüm geçmiş yazıları ve kayıtları." url="/arsiv" />
+            <SEO title="Arşiv" description="Isyandayiz hareketinin tüm geçmiş yazıları ve kayıtları." url="/arsiv" />
             <div className="container" style={{ maxWidth: '900px' }}>
                 <header style={{ marginBottom: '4rem' }}>
                     <h1 style={{ fontSize: '4rem', marginBottom: '1rem' }}>Yazı <span style={{ color: 'var(--primary)' }}>Arşivi</span></h1>

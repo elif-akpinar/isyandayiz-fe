@@ -15,7 +15,7 @@ collections:
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Author", name: "author", widget: "string", default: "Femsol Merkez"}
+      - {label: "Author", name: "author", widget: "string", default: "Isyandayiz Merkez"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "image", widget: "image", required: false}
       - {label: "Description", name: "description", widget: "text"}
@@ -29,7 +29,7 @@ collections:
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Author", name: "author", widget: "string", default: "Femsol Merkez"}
+      - {label: "Author", name: "author", widget: "string", default: "Isyandayiz Merkez"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "image", widget: "image", required: false}
       - {label: "Description", name: "description", widget: "text"}

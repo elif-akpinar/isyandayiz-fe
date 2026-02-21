@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 
 const SEO = ({ title, description, image, url }) => {
-    const defaultTitle = 'FEMSOL | Eşitlik ve Dayanışma Hareketi';
-    const defaultDescription = 'Femsol, toplumsal cinsiyet eşitliği ve sosyal adalet için mücadele eden radikal bir siyasi harekettir.';
-    const siteUrl = 'https://femsol.org'; // Replace with actual URL
+    const defaultTitle = 'İSYANDAYIZ | Eşitlik ve Dayanışma Hareketi';
+    const defaultDescription = 'Isyandayiz, toplumsal cinsiyet eşitliği ve sosyal adalet için mücadele eden radikal bir siyasi harekettir.';
+    const siteUrl = 'https://isyandayiz.org'; // Replace with actual URL
 
     useEffect(() => {
         // Update Document Title
-        document.title = title ? `${title} | FEMSOL` : defaultTitle;
+        document.title = title ? `${title} | İSYANDAYIZ` : defaultTitle;
 
         // Update Meta Tags
         const updateMeta = (selector, content) => {
@@ -23,13 +23,13 @@ const SEO = ({ title, description, image, url }) => {
         updateMeta('meta[name="description"]', finalDescription);
 
         // Open Graph
-        updateMeta('meta[property="og:title"]', title ? `${title} | FEMSOL` : defaultTitle);
+        updateMeta('meta[property="og:title"]', title ? `${title} | İSYANDAYIZ` : defaultTitle);
         updateMeta('meta[property="og:description"]', finalDescription);
         updateMeta('meta[property="og:image"]', finalImage);
         updateMeta('meta[property="og:url"]', finalUrl);
 
         // Twitter
-        updateMeta('meta[property="twitter:title"]', title ? `${title} | FEMSOL` : defaultTitle);
+        updateMeta('meta[property="twitter:title"]', title ? `${title} | İSYANDAYIZ` : defaultTitle);
         updateMeta('meta[property="twitter:description"]', finalDescription);
         updateMeta('meta[property="twitter:image"]', finalImage);
         updateMeta('meta[property="twitter:url"]', finalUrl);

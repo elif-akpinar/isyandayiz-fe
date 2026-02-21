@@ -78,7 +78,7 @@ export default function Home() {
                                             color: 'rgba(212, 0, 255, 0.05)',
                                             letterSpacing: '-10px'
                                         }}>
-                                            FEMSOL
+                                            İSYANDAYIZ
                                         </div>
                                     )}
                                 </div>
@@ -208,7 +208,7 @@ export default function Home() {
                                             <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                         ) : (
                                             <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#333', fontSize: '2rem', fontWeight: 800 }}>
-                                                FEMSOL
+                                                İSYANDAYIZ
                                             </div>
                                         )}
                                     </div>
