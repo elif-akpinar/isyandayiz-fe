@@ -35,6 +35,16 @@ Panel açıldığında (Content Manager yazan sayfa):
 
 ---
 
+## 🌎 4. Yaptığınız Değişiklikleri İnternete Yükleme
+
+Sitede bir yazı ekledikten veya bir hata düzelttikten sonra bu değişiklikleri herkesin görmesi için GitHub'a göndermeniz gerekir:
+
+1.  Proje klasöründeki **`yayınla.bat`** dosyasına çift tıklayın.
+2.  **Mesaj Yazın:** Ekran size ne yaptığınızı soracaktır (Örn: "Yeni haber eklendi"). Yazıp Enter'a basın.
+3.  **Bitti:** Dosyalarınız otomatik olarak GitHub'a yüklenecektir. Birkaç dakika içinde siteniz otomatik olarak güncellenir.
+
+---
+
 ## ⚠️ Dikkat Edilmesi Gerekenler
 - `yönetim-panelini-başlat.bat` dosyasını çalıştırdığınızda açılan **siyah pencereleri kapatmayın**. Bu pencereler sitenin arka plandaki motorudur. Onları kapatırsanız site de kapanır.
 - İşiniz bittiğinde o pencereleri normal bir şekilde çarpıdan kapatabilirsiniz.
