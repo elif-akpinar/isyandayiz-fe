@@ -34,7 +34,7 @@ export default function Navbar() {
                         {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                     </button>
 
-                    <Link to="/katil" className="glass" style={{ padding: '0.5rem 1.5rem', borderRadius: '50px', border: '1px solid var(--primary)', color: 'var(--primary)', fontWeight: 700 }}>Katıl</Link>
+                    <Link to="/yazi-gonder" className="glass" style={{ padding: '0.5rem 1.5rem', borderRadius: '50px', border: '1px solid var(--primary)', color: 'var(--primary)', fontWeight: 700 }}>Bize yazı gönderin</Link>
                 </div>
 
                 {/* Mobile Controls */}
@@ -91,7 +91,7 @@ export default function Navbar() {
                             </Link>
                         ))}
                         <Link
-                            to="/katil"
+                            to="/yazi-gonder"
                             onClick={() => setIsOpen(false)}
                             className="glass"
                             style={{
@@ -105,7 +105,7 @@ export default function Navbar() {
                                 background: 'rgba(212, 0, 255, 0.05)'
                             }}
                         >
-                            KATIL BİZE
+                            BİZE YAZI GÖNDERİN
                         </Link>
                     </motion.div>
                 )}

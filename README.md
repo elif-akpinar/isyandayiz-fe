@@ -1,49 +1,48 @@
-# ✊ İSYANDAYIZ Hareket Sitesi - Yönetim Rehberi
+# ✊ İSYANDAYIZ Web Sitesi Kurulum ve Yönetim Rehberi
 
-Bu rehber, teknik bilgisi olmayan kullanıcıların **İSYANDAYIZ** web sitesine nasıl içerik (Haber, Blog, Etkinlik) ekleyebileceğini anlatır.
-
----
-
-## 🚀 Başlarken (İlk Kurulum)
-
-Eğer bilgisayarınızda çalışma ortamı kurulu değilse, sadece bir kez şu adımı yapmanız gerekir:
-1. [Node.js](https://nodejs.org/) adresine gidin.
-2. **"LTS"** yazan butona tıklayıp indirin ve kurun.
+Bu rehber, teknik bilgisi olmayan birinin projeyi bilgisayarına yüklemesi, çalıştırması ve içerik eklemesi için hazırlanmıştır. Aşağıdaki adımları takip ederek her şeyi tek tıkla halledebilirsiniz.
 
 ---
 
-## 🖥️ İçerik Nasıl Eklenir? (Yönetim Paneli)
+## 🛠️ 1. Hazırlık (Lütfen Sadece Bir Kez Yapın)
 
-Siteye yazı eklemek veya düzenlemek için şu adımları takip edin:
+Siteyi çalıştırabilmek için bilgisayarınızda şu iki programın olması gerekir:
 
-1. **Başlatma:** Proje klasöründeki `yönetim-panelini-başlat.bat` dosyasına çift tıklayın.
-2. **Bekleme:** Karşınıza siyah bir pencere gelecek ve gerekli hazırlıkları yapacaktır. Yaklaşık 10 saniye sonra tarayıcınızda yönetim paneli otomatik olarak açılacaktır.
-3. **Kullanım:**
-   - **Haberler:** Güncel duyurular ve kısa haberler için.
-   - **Blog Yazıları:** Fikir yazıları, analizler ve uzun makaleler için.
-   - **Etkinlikler:** Anasayfadaki geri sayım sayacı için.
+1.  **Node.js:** [Buradan indirin](https://nodejs.org/). (Sol taraftaki **"LTS"** yazan yeşil butona tıklayıp kurun.)
+2.  **Git:** [Buradan indirin](https://git-scm.com/downloads). (Windows yazana tıklayıp kurun.)
 
-### 📝 Yeni Yazı Ekleme Kuralları
-- **Başlık:** Yazınızın ana başlığı.
-- **Yazar:** Kendi adınızı veya "Isyandayiz Merkez" yazabilirsiniz.
-- **Tarih:** Yazının yayınlanma tarihi.
-- **Öne Çıkan Görsel:** Yazı için bir kapak fotoğrafı seçebilirsiniz.
-- **Gövde (Body):** Yazınızın ana metni. Burada kalın yazı veya başlık gibi biçimlendirmeler yapabilirsiniz.
-
-**Önemli:** Yazınızı bitirdiğinizde sağ üstteki **"Publish"** butonuna basmayı unutmayın!
+*(Not: Kurulum sırasında çıkan tüm seçeneklere sadece "İleri/Next" diyerek onay verebilirsiniz.)*
 
 ---
 
-## 🎨 Tema (Karanlık/Aydınlık) Modu
-Sitenin sağ üst köşesinde bulunan **Güneş/Ay** ikonuna tıklayarak görüntüyü değiştirebilirsiniz. Bu özellik kullanıcıların okuma konforu için eklenmiştir.
+## 🚀 2. Siteyi ve Yönetim Panelini Başlatma
+
+Kurulumlardan sonra tek yapmanız gereken şudur:
+
+1.  Proje klasörünün içindeki **`yönetim-panelini-başlat.bat`** dosyasına çift tıklayın.
+2.  **Bekleyin:** Siyah bir pencere açılacak ve gerekli tüm ayarları otomatik yapacaktır. (Eğer ilk kez açıyorsanız, kütüphaneleri yükleyeceği için 1-2 dakika sürebilir.)
+3.  **Keyfini Çıkarın:** Yaklaşık 10 saniye sonra hem web siteniz hem de yazı ekleme paneliniz tarayıcıda otomatik olarak açılacaktır.
 
 ---
 
-## 🛠️ Teknik Notlar (Geliştiriciler İçin)
-- Bu site **React** ve **Vite** kullanılarak inşa edilmiştir.
-- İçerikler `/cms-admin` klasöründeki yapılandırma ile yönetilir ancak içerik dosyaları `/src/content` altında `.md` formatında saklanır.
-- **Yayınlama:** Siteyi canlıya almak için `npm run build` komutunu kullanıp `dist` klasörünü sunucunuza yüklemeniz yeterlidir.
+## 📝 3. Yazı ve Haber Ekleme
+
+Panel açıldığında (Content Manager yazan sayfa):
+
+1.  Sol menüden ne eklemek istediğinizi seçin (**Blog Yazıları**, **Haberler** veya **Etkinlikler**).
+2.  **"New Entry"** butonuna basarak yeni içeriğinizi yazın.
+3.  Sağ üstteki **"Publish"** butonuna basarak kaydetmeyi unutmayın.
 
 ---
 
-**Dayanışma yaşatır!** ✊✨
+## ⚠️ Dikkat Edilmesi Gerekenler
+- `yönetim-panelini-başlat.bat` dosyasını çalıştırdığınızda açılan **siyah pencereleri kapatmayın**. Bu pencereler sitenin arka plandaki motorudur. Onları kapatırsanız site de kapanır.
+- İşiniz bittiğinde o pencereleri normal bir şekilde çarpıdan kapatabilirsiniz.
+
+---
+
+## 🛠️ Geliştiriciler İçin Komutlar
+Eğer manuel olarak çalıştırmak isterseniz:
+- Kurulum: `npm install`
+- Başlatma: `npm run dev`
+- CMS Veri Sunucusu: `npx decap-server`

@@ -1,8 +1,17 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import SEO from '../components/SEO';
+import { useState } from 'react';
 
 export default function Iletisim() {
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Placeholder for Formspark submission
+        setIsSubmitted(true);
+    };
+
     return (
         <div style={{ paddingTop: '100px', minHeight: '100vh', paddingBottom: '80px' }}>
             <SEO title="İletişim" description="Isyandayiz ile iletişime geçin. Dayanışmaya katılmak, soru sormak veya öneride bulunmak için bize yazın." url="/iletisim" />
@@ -60,25 +69,59 @@ export default function Iletisim() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         className="glass contact-form-card"
-                        style={{ padding: '2.5rem', borderRadius: '32px' }}
+                        style={{ padding: '2.5rem', borderRadius: '32px', display: 'flex', flexDirection: 'column' }}
                     >
-                        <form style={{ display: 'grid', gap: '1.2rem' }} onSubmit={e => e.preventDefault()}>
-                            <div style={{ display: 'grid', gap: '0.5rem' }}>
-                                <label style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Adınız Soyadınız</label>
-                                <input type="text" className="input-field" placeholder="Örn: Ayşe Yılmaz" />
+                        {isSubmitted ? (
+                            <div style={{ textAlign: 'center', padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                <motion.div
+                                    initial={{ scale: 0 }}
+                                    animate={{ scale: 1 }}
+                                    transition={{ type: 'spring', damping: 12, stiffness: 200 }}
+                                    style={{
+                                        width: '80px',
+                                        height: '80px',
+                                        borderRadius: '50%',
+                                        background: 'rgba(0, 255, 128, 0.1)',
+                                        border: '2px solid #00ff80',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        marginBottom: '1.5rem'
+                                    }}
+                                >
+                                    <CheckCircle color="#00ff80" size={40} />
+                                </motion.div>
+                                <h2 style={{ marginBottom: '1rem' }}>Mesajınız İletildi!</h2>
+                                <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>
+                                    Bize ulaştığınız için teşekkürler. Mesajınız ekibimize ulaştı, en kısa sürede size geri dönüş yapacağız.
+                                </p>
+                                <button
+                                    onClick={() => setIsSubmitted(false)}
+                                    className="btn-primary"
+                                    style={{ marginTop: '2rem', border: 'none', marginInline: 'auto' }}
+                                >
+                                    Yeni Bir Mesaj Gönder
+                                </button>
                             </div>
-                            <div style={{ display: 'grid', gap: '0.5rem' }}>
-                                <label style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>E-posta Adresiniz</label>
-                                <input type="email" className="input-field" placeholder="email@ornek.com" />
-                            </div>
-                            <div style={{ display: 'grid', gap: '0.5rem' }}>
-                                <label style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Mesajınız</label>
-                                <textarea rows="5" className="input-field" placeholder="Bize nasıl katılmak istersiniz?" style={{ resize: 'none' }}></textarea>
-                            </div>
-                            <button className="btn-primary" style={{ width: '100%', marginTop: '0.5rem', border: 'none', justifyContent: 'center' }}>
-                                Gönder <Send size={18} style={{ marginLeft: '10px' }} />
-                            </button>
-                        </form>
+                        ) : (
+                            <form style={{ display: 'grid', gap: '1.2rem' }} onSubmit={handleSubmit}>
+                                <div style={{ display: 'grid', gap: '0.5rem' }}>
+                                    <label style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Adınız Soyadınız</label>
+                                    <input required type="text" name="name" className="input-field" placeholder="Örn: Ayşe Yılmaz" onInvalid={e => e.target.setCustomValidity('Lütfen bu alanı doldurun.')} onInput={e => e.target.setCustomValidity('')} />
+                                </div>
+                                <div style={{ display: 'grid', gap: '0.5rem' }}>
+                                    <label style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>E-posta Adresiniz</label>
+                                    <input required type="email" name="email" className="input-field" placeholder="email@ornek.com" onInvalid={e => e.target.setCustomValidity('Lütfen geçerli bir e-posta adresi girin.')} onInput={e => e.target.setCustomValidity('')} />
+                                </div>
+                                <div style={{ display: 'grid', gap: '0.5rem' }}>
+                                    <label style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Mesajınız</label>
+                                    <textarea required name="message" rows="5" className="input-field" placeholder="Mesajınızı buraya yazın..." style={{ resize: 'none' }} onInvalid={e => e.target.setCustomValidity('Lütfen bu alanı doldurun.')} onInput={e => e.target.setCustomValidity('')}></textarea>
+                                </div>
+                                <button type="submit" className="btn-primary" style={{ width: '100%', marginTop: '0.5rem', border: 'none', justifyContent: 'center' }}>
+                                    Gönder <Send size={18} style={{ marginLeft: '10px' }} />
+                                </button>
+                            </form>
+                        )}
                     </motion.div>
                 </div>
             </div>
@@ -99,6 +142,23 @@ export default function Iletisim() {
                 .input-field:focus {
                     border-color: var(--primary);
                     background: rgba(255, 255, 255, 0.1);
+                }
+                .btn-primary {
+                    background: var(--primary);
+                    color: white;
+                    padding: 0.8rem 2rem;
+                    border-radius: 50px;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+                .btn-primary:hover {
+                    opacity: 0.9;
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 20px rgba(212, 0, 255, 0.3);
                 }
                 @media (max-width: 768px) {
                     .contact-form-card { padding: 1.5rem !important; }

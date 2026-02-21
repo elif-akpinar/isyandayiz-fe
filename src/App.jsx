@@ -7,6 +7,7 @@ import Arsiv from './pages/Arsiv';
 import Hakkimizda from './pages/Hakkimizda';
 import Iletisim from './pages/Iletisim';
 import BlogPost from './pages/BlogPost';
+import YaziGonder from './pages/YaziGonder';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
             <Route path="/arsiv" element={<Arsiv />} />
             <Route path="/hakkimizda" element={<Hakkimizda />} />
             <Route path="/iletisim" element={<Iletisim />} />
-            <Route path="/katil" element={<Iletisim />} />
+            <Route path="/yazi-gonder" element={<YaziGonder />} />
+            <Route path="/katil" element={<YaziGonder />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             {/* Fallback for other routes */}
             <Route path="*" element={<Home />} />
