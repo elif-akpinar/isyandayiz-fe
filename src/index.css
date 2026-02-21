@@ -124,6 +124,19 @@ button {
   padding: 0 2rem;
 }
 
+html {
+  scroll-padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.2rem;
+  }
+  html {
+    scroll-padding-top: 80px;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

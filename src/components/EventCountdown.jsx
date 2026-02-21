@@ -60,7 +60,7 @@ export default function EventCountdown() {
     return (
         <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: '33vh', opacity: 1 }}
+            animate={{ height: 'auto', opacity: 1 }}
             style={{
                 background: 'var(--bg-card)',
                 position: 'relative',
@@ -68,7 +68,7 @@ export default function EventCountdown() {
                 borderBottom: '1px solid var(--primary)',
                 display: 'flex',
                 alignItems: 'center',
-                minHeight: '280px'
+                padding: '4rem 0'
             }}
         >
             {/* Animated Background Gradients */}
@@ -84,18 +84,18 @@ export default function EventCountdown() {
                 zIndex: 1
             }} />
 
-            <div className="container" style={{ position: 'relative', zIndex: 10, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+            <div className="container" style={{ position: 'relative', zIndex: 10, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
                 <div style={{ display: 'none' }} className="mobile-only-header">
-                    <span style={{ color: 'var(--primary)', fontWeight: 800 }}>ETKİNLİK DUYURUSU</span>
+                    <span style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '0.8rem', letterSpacing: '2px' }}>ETKİNLİK DUYURUSU</span>
                 </div>
 
-                <div>
+                <div className="event-content">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3 }}
                     >
-                        <h4 style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '2px', marginBottom: '1rem', fontSize: '0.9rem' }}>GELECEK ETKİNLİK</h4>
+                        <h4 className="desktop-only-header" style={{ color: 'var(--primary)', fontWeight: 800, letterSpacing: '2px', marginBottom: '1rem', fontSize: '0.9rem' }}>GELECEK ETKİNLİK</h4>
                         <h2 style={{ fontSize: '2.5rem', lineHeight: 1.1, marginBottom: '1.5rem', color: 'var(--text-main)' }}>{event.title}</h2>
                         <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', maxWidth: '500px' }}>{event.description}</p>
 
@@ -105,8 +105,8 @@ export default function EventCountdown() {
                     </motion.div>
                 </div>
 
-                <div style={{ textAlign: 'center' }}>
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
+                <div className="timer-wrapper" style={{ textAlign: 'center' }}>
+                    <div className="timer-grid" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                         {[
                             { label: 'GÜN', val: timeLeft.days },
                             { label: 'SAAT', val: timeLeft.hours },
@@ -118,19 +118,19 @@ export default function EventCountdown() {
                                 initial={{ scale: 0.8, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 transition={{ delay: 0.5 + (i * 0.1) }}
+                                className="timer-unit glass"
                                 style={{
-                                    background: 'var(--glass)',
                                     border: '1px solid var(--border)',
                                     borderRadius: '16px',
-                                    padding: '1.5rem',
-                                    minWidth: '100px',
+                                    padding: '1.2rem',
+                                    minWidth: '90px',
                                     backdropFilter: 'blur(10px)'
                                 }}
                             >
-                                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--primary)', lineHeight: 1 }}>
+                                <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--primary)', lineHeight: 1 }}>
                                     {String(unit.val).padStart(2, '0')}
                                 </div>
-                                <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.5rem', fontWeight: 700, letterSpacing: '1px' }}>
+                                <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginTop: '0.5rem', fontWeight: 700, letterSpacing: '1px' }}>
                                     {unit.label}
                                 </div>
                             </motion.div>
@@ -156,9 +156,16 @@ export default function EventCountdown() {
             <style dangerouslySetInnerHTML={{
                 __html: `
                 @media (max-width: 992px) {
-                    .container { grid-template-columns: 1fr !important; gap: 2rem !important; }
-                    .mobile-only-header { display: block !important; }
-                    h2 { fontSize: 1.8rem !important; }
+                    .container { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+                    .mobile-only-header { display: block !important; margin-bottom: -1rem; }
+                    .desktop-only-header { display: none !important; }
+                    h2 { font-size: 1.8rem !important; }
+                    .timer-unit { min-width: 75px !important; padding: 1rem !important; }
+                    .timer-unit div:first-child { font-size: 1.5rem !important; }
+                }
+                @media (max-width: 480px) {
+                    .timer-grid { gap: 0.5rem !important; }
+                    .timer-unit { min-width: 70px !important; padding: 0.8rem !important; }
                 }
             `}} />
         </motion.div>

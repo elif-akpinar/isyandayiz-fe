@@ -43,7 +43,7 @@ export default function Home() {
             {/* Hero Carousel Section */}
             <section style={{
                 height: '85vh',
-                minHeight: '600px',
+                minHeight: '500px',
                 position: 'relative',
                 overflow: 'hidden',
                 backgroundColor: '#000'
@@ -63,7 +63,7 @@ export default function Home() {
                                     backgroundImage: post.image ? `url(${post.image})` : 'none',
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
-                                    filter: 'brightness(0.4)',
+                                    filter: 'brightness(0.3)',
                                     zIndex: 1
                                 }}>
                                     {!post.image && (
@@ -96,22 +96,23 @@ export default function Home() {
                                         initial={{ opacity: 0, y: 30 }}
                                         animate={{ opacity: selectedIndex === idx ? 1 : 0, y: selectedIndex === idx ? 0 : 30 }}
                                         transition={{ duration: 0.8, delay: 0.2 }}
+                                        className="hero-content"
                                     >
                                         <span className="glass" style={{
-                                            padding: '0.5rem 1rem',
+                                            padding: '0.4rem 0.8rem',
                                             borderRadius: '50px',
-                                            fontSize: '0.8rem',
+                                            fontSize: '0.7rem',
                                             fontWeight: 700,
                                             color: 'var(--primary)',
                                             textTransform: 'uppercase',
                                             letterSpacing: '2px',
                                             display: 'inline-block',
-                                            marginBottom: '1.5rem'
+                                            marginBottom: '1rem'
                                         }}>
                                             Öne Çıkan Yazı
                                         </span>
-                                        <h1 style={{
-                                            fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
+                                        <h1 className="hero-title" style={{
+                                            fontSize: 'clamp(2rem, 8vw, 4.5rem)',
                                             lineHeight: 1.1,
                                             fontWeight: 800,
                                             marginBottom: '1.5rem',
@@ -119,8 +120,8 @@ export default function Home() {
                                         }}>
                                             {post.title}
                                         </h1>
-                                        <p style={{
-                                            fontSize: '1.2rem',
+                                        <p className="hero-desc" style={{
+                                            fontSize: '1.1rem',
                                             maxWidth: '600px',
                                             color: '#ccc',
                                             marginBottom: '2.5rem',
@@ -142,7 +143,7 @@ export default function Home() {
                 </div>
 
                 {/* Carousel Controls */}
-                <div style={{
+                <div className="carousel-controls" style={{
                     position: 'absolute',
                     bottom: '40px',
                     left: '50%',
@@ -152,7 +153,7 @@ export default function Home() {
                     alignItems: 'center',
                     gap: '2rem'
                 }}>
-                    <button onClick={scrollPrev} className="carousel-btn">
+                    <button onClick={scrollPrev} className="carousel-btn desktop-only">
                         <ArrowLeft size={24} />
                     </button>
 
@@ -168,29 +169,29 @@ export default function Home() {
                         ))}
                     </div>
 
-                    <button onClick={scrollNext} className="carousel-btn">
+                    <button onClick={scrollNext} className="carousel-btn desktop-only">
                         <ArrowRight size={24} />
                     </button>
                 </div>
             </section>
 
             {/* Latest Posts Section */}
-            <section style={{ padding: '100px 0' }}>
+            <section style={{ padding: '80px 0' }} className="latest-posts">
                 <div className="container">
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem' }}>
+                    <div className="section-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }}>
                         <div>
-                            <h2 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Son <span style={{ color: 'var(--primary)' }}>Yazılar</span></h2>
+                            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '0.5rem' }}>Son <span style={{ color: 'var(--primary)' }}>Yazılar</span></h2>
                             <p style={{ color: 'var(--text-muted)' }}>Hareketimizden en güncel haberler ve makaleler.</p>
                         </div>
-                        <Link to="/blog" style={{ color: 'var(--primary)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <Link to="/blog" style={{ color: 'var(--primary)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }} className="desktop-only">
                             Tümünü Gör <ArrowRight size={18} />
                         </Link>
                     </div>
 
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                        gap: '2rem'
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+                        gap: '1.5rem'
                     }}>
                         {latestPosts.map((post, idx) => (
                             <motion.article
@@ -212,19 +213,25 @@ export default function Home() {
                                             </div>
                                         )}
                                     </div>
-                                    <div style={{ padding: '1.5rem' }}>
+                                    <div style={{ padding: '1.2rem' }}>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.5rem' }}>
                                             <Calendar size={14} />
                                             {new Date(post.date).toLocaleDateString('tr-TR')}
                                         </div>
-                                        <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem', lineHeight: 1.3 }}>{post.title}</h3>
-                                        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                                        <h3 style={{ fontSize: '1.2rem', marginBottom: '0.8rem', lineHeight: 1.3 }}>{post.title}</h3>
+                                        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                                             {post.description}
                                         </p>
                                     </div>
                                 </Link>
                             </motion.article>
                         ))}
+                    </div>
+
+                    <div style={{ display: 'none', marginTop: '3rem', textAlign: 'center' }} className="mobile-only">
+                        <Link to="/blog" className="glass" style={{ padding: '1rem 2rem', borderRadius: '50px', color: 'var(--primary)', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                            Tüm Yazıları Gör <ArrowRight size={18} />
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -234,13 +241,14 @@ export default function Home() {
         .btn-primary {
           background: var(--primary);
           color: white;
-          padding: 1rem 2.5rem;
+          padding: 1rem 2rem;
           border-radius: 50px;
           font-weight: 700;
           box-shadow: 0 10px 30px var(--primary-glow);
           transition: all 0.3s ease;
           display: inline-flex;
           align-items: center;
+          font-size: 0.9rem;
         }
         .btn-primary:hover {
           transform: scale(1.05);
@@ -250,7 +258,7 @@ export default function Home() {
           transition: all 0.4s ease;
         }
         .home-blog-card:hover {
-          transform: translateY(-10px);
+          transform: translateY(-8px);
           border-color: var(--primary);
         }
         .carousel-btn {
@@ -260,8 +268,8 @@ export default function Home() {
             height: 50px;
             border-radius: 50%;
             display: flex;
-            alignItems: center;
-            justifyContent: center;
+            align-items: center;
+            justify-content: center;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s ease;
@@ -273,6 +281,18 @@ export default function Home() {
         .embla { overflow: hidden; }
         .embla__container { display: flex; }
         .embla__slide { flex: 0 0 100%; min-width: 0; }
+
+        @media (max-width: 768px) {
+            .desktop-only { display: none !important; }
+            .mobile-only { display: block !important; }
+            .section-header { flex-direction: column !important; align-items: flex-start !important; gap: 1rem; }
+            .latest-posts { padding: 60px 0 !important; }
+            .hero-desc { font-size: 1rem !important; margin-bottom: 2rem !important; }
+            .btn-primary { padding: 0.8rem 1.5rem !important; width: 100%; border: none; justify-content: center; }
+            .hero-content { text-align: center; }
+            .hero-title { margin-left: auto; margin-right: auto; }
+            .hero-desc { margin-left: auto; margin-right: auto; }
+        }
       `}} />
         </div>
     );
