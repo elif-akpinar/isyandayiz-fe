@@ -2,38 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://isyandayiz.org/</loc>
-    <lastmod>2024-02-16</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://isyandayiz.org/haberler</loc>
-    <lastmod>2024-02-16</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://isyandayiz.org/blog</loc>
-    <lastmod>2024-02-16</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://isyandayiz.org/arsiv</loc>
-    <lastmod>2024-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://isyandayiz.org/hakkimizda</loc>
-    <lastmod>2024-02-16</lastmod>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://isyandayiz.org/iletisim</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://isyandayiz.org/blog/2024-02-05-dayanisma-ekonomisi</loc>
+    <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://isyandayiz.org/iletisim</loc>
-    <lastmod>2024-02-16</lastmod>
+    <loc>https://isyandayiz.org/blog/2024-02-10-kent-ve-cinsiyet</loc>
+    <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://isyandayiz.org/blog/2026-02-16-adsad</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://isyandayiz.org/blog/2026-02-16-hyjuk</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://isyandayiz.org/blog/2026-02-16-patlıo-herkez</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://isyandayiz.org/blog/2026-02-16-retfghghjj</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://isyandayiz.org/blog/2024-02-16-ilk-yazi</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://isyandayiz.org/blog/2026-02-16-asd123</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://isyandayiz.org/blog/2026-02-16-haber</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

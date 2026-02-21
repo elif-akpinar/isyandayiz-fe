@@ -10,7 +10,7 @@ import BlogPost from './pages/BlogPost';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/isyandayiz-fe">
       <div className="app">
         <Navbar />
         <main>
