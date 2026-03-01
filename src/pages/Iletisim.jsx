@@ -56,7 +56,7 @@ export default function Iletisim() {
                         <div style={{ marginTop: '3rem' }}>
                             <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem' }}>Bizi Takip Edin</h3>
                             <div style={{ display: 'flex', gap: '1rem' }}>
-                                {['TW', 'IG', 'FB', 'YT'].map(social => (
+                                {['X', 'IG', 'FB', 'YT'].map(social => (
                                     <a href="#" key={social} className="glass" style={{ width: '45px', height: '45px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '0.9rem' }}>{social}</a>
                                 ))}
                             </div>

@@ -40,18 +40,17 @@ function App() {
               <div>
                 <h4 style={{ marginBottom: '1.2rem' }}>Bağlantılar</h4>
                 <ul style={{ listStyle: 'none', color: 'var(--text-muted)' }}>
-                  <li style={{ marginBottom: '0.8rem' }}><a href="/">Manifesto</a></li>
-                  <li style={{ marginBottom: '0.8rem' }}><a href="/haberler">Haberler</a></li>
+                  <li style={{ marginBottom: '0.8rem' }}><a href="/isyandayiz-fe/haberler">Haberler</a></li>
                   {import.meta.env.DEV && (
-                    <li style={{ marginBottom: '0.8rem' }}><a href="/admin/index.html">Admin Sayfası</a></li>
+                    <li style={{ marginBottom: '0.8rem' }}><a href="http://localhost:5173/admin/index.html">Admin Sayfası</a></li>
                   )}
-                  <li style={{ marginBottom: '0.8rem' }}><a href="/iletisim">İletişim</a></li>
+                  <li style={{ marginBottom: '0.8rem' }}><a href="/isyandayiz-fe/iletisim">İletişim</a></li>
                 </ul>
               </div>
               <div>
                 <h4 style={{ marginBottom: '1.2rem' }}>Sosyal Medya</h4>
                 <div style={{ display: 'flex', gap: '1rem' }}>
-                  <a href="#" className="glass" style={{ width: '40px', height: '40px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>TW</a>
+                  <a href="#" className="glass" style={{ width: '40px', height: '40px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>X</a>
                   <a href="#" className="glass" style={{ width: '40px', height: '40px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>IG</a>
                 </div>
               </div>

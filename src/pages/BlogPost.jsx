@@ -39,6 +39,27 @@ export default function BlogPost() {
                             <User size={14} /> {post.author}
                         </div>
                     </div>
+
+                    {Array.isArray(post.tags) && (
+                        <div style={{ display: 'flex', gap: '0.8rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+                            {post.tags.map(tag => (
+                                <Link
+                                    key={tag}
+                                    to={post.type === 'blog' ? '/blog' : '/haberler'}
+                                    style={{
+                                        color: post.type === 'blog' ? 'var(--primary)' : 'var(--secondary)',
+                                        fontSize: '0.9rem',
+                                        fontWeight: 700,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.2rem'
+                                    }}
+                                >
+                                    #{tag}
+                                </Link>
+                            ))}
+                        </div>
+                    )}
                 </header>
 
                 {post.image && (

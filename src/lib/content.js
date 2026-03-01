@@ -16,10 +16,41 @@ export function parseMarkdown(md) {
   const content = match[2];
 
   const data = {};
-  frontmatter.split('\n').forEach(line => {
-    const [key, ...valueParts] = line.split(':');
-    if (key && valueParts.length > 0) {
-      data[key.trim()] = valueParts.join(':').trim().replace(/^"(.*)"$/, '$1');
+  const lines = frontmatter.split('\n');
+
+  let currentKey = null;
+
+  lines.forEach(line => {
+    const trimmedLine = line.trim();
+    if (!trimmedLine) return;
+
+    if (trimmedLine.startsWith('- ')) {
+      // Handle list items
+      if (currentKey) {
+        if (!Array.isArray(data[currentKey])) {
+          data[currentKey] = [];
+        }
+        data[currentKey].push(trimmedLine.substring(2).replace(/^"(.*)"$/, '$1'));
+      }
+    } else {
+      const colonIndex = trimmedLine.indexOf(':');
+      if (colonIndex !== -1) {
+        const key = trimmedLine.substring(0, colonIndex).trim();
+        const value = trimmedLine.substring(colonIndex + 1).trim().replace(/^"(.*)"$/, '$1');
+
+        currentKey = key;
+
+        if (value.startsWith('[') && value.endsWith(']')) {
+          try {
+            // Handle [item1, item2] format
+            data[key] = JSON.parse(value.replace(/'/g, '"'));
+          } catch (e) {
+            data[key] = value;
+          }
+        } else {
+          data[key] = value;
+        }
+      }
     }
   });
 

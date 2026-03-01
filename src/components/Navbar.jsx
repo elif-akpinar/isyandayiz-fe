@@ -21,7 +21,7 @@ export default function Navbar() {
         <nav className="glass" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, padding: '1rem 0', background: 'var(--nav-bg)' }}>
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Link to="/" style={{ fontSize: '1.8rem', fontWeight: 800, letterSpacing: '-1px', color: 'var(--primary)' }} onClick={() => setIsOpen(false)}>
-                    FEM<span style={{ color: 'var(--text-main)' }}>SOL</span>
+                    İSYANDAYIZ<span style={{ color: 'var(--text-main)' }}>.ORG</span>
                 </Link>
 
                 {/* Desktop Menu */}
