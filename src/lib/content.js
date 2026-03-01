@@ -26,6 +26,17 @@ export function parseMarkdown(md) {
   return { data, content };
 }
 
+export function fixImagePath(path) {
+  if (!path) return path;
+  if (path.startsWith('http')) return path;
+
+  const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+  if (path.startsWith('/uploads/')) {
+    return `${baseUrl}${path}`;
+  }
+  return path;
+}
+
 export async function getPosts() {
   const blogModules = import.meta.glob('/src/content/blog/*.md', { query: '?raw', import: 'default', eager: true });
   const newsModules = import.meta.glob('/src/content/haberler/*.md', { query: '?raw', import: 'default', eager: true });
@@ -35,11 +46,23 @@ export async function getPosts() {
       const slug = path.split('/').pop().replace('.md', '');
       const contentText = modules[path];
       const { data, content } = parseMarkdown(contentText);
+
+      // Fix featured image path
+      if (data.image) {
+        data.image = fixImagePath(data.image);
+      }
+
+      // Fix images in markdown body
+      const fixedBody = content.replace(/!\[(.*?)\]\(\/uploads\/(.*?)\)/g, (match, alt, filename) => {
+        const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+        return `![${alt}](${baseUrl}/uploads/${filename})`;
+      });
+
       return {
         slug,
         type: data.type || defaultType,
         ...data,
-        body: content
+        body: fixedBody
       };
     });
   };
@@ -59,6 +82,12 @@ export async function getEvents() {
     const slug = path.split('/').pop().replace('.md', '');
     const contentText = eventModules[path];
     const { data } = parseMarkdown(contentText);
+
+    // Potentially fix any image fields in events if they exist
+    if (data.image) {
+      data.image = fixImagePath(data.image);
+    }
+
     return {
       slug,
       ...data
@@ -66,6 +95,28 @@ export async function getEvents() {
   });
 
   return events;
+}
+
+export async function getFiles() {
+  const fileModules = import.meta.glob('/src/content/files/*.md', { query: '?raw', import: 'default', eager: true });
+
+  const files = Object.keys(fileModules).map(path => {
+    const slug = path.split('/').pop().replace('.md', '');
+    const contentText = fileModules[path];
+    const { data } = parseMarkdown(contentText);
+
+    // Fix file path if it exists
+    if (data.file) {
+      data.file = fixImagePath(data.file);
+    }
+
+    return {
+      slug,
+      ...data
+    };
+  });
+
+  return files.sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
 export async function getPostBySlug(slug) {

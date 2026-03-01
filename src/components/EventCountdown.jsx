@@ -62,7 +62,10 @@ export default function EventCountdown() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             style={{
-                background: 'var(--bg-card)',
+                backgroundColor: 'var(--bg-card)',
+                backgroundImage: event.image ? `url(${event.image})` : 'none',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
                 position: 'relative',
                 overflow: 'hidden',
                 borderBottom: '1px solid var(--primary)',
@@ -71,6 +74,16 @@ export default function EventCountdown() {
                 padding: '4rem 0'
             }}
         >
+            {/* Dark Overlay for Readability */}
+            {event.image && (
+                <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)',
+                    zIndex: 2
+                }} />
+            )}
+
             {/* Animated Background Gradients */}
             <div style={{
                 position: 'absolute',
@@ -79,7 +92,7 @@ export default function EventCountdown() {
                 width: '600px',
                 height: '600px',
                 background: 'radial-gradient(circle, var(--primary) 0%, transparent 70%)',
-                opacity: 0.15,
+                opacity: event.image ? 0.3 : 0.15,
                 filter: 'blur(100px)',
                 zIndex: 1
             }} />

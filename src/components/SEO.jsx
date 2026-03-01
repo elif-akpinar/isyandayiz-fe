@@ -16,8 +16,21 @@ const SEO = ({ title, description, image, url }) => {
         };
 
         const finalDescription = description || defaultDescription;
-        const finalImage = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : `${siteUrl}/og-image.jpg`;
-        const finalUrl = url ? `${siteUrl}${url}` : siteUrl;
+        let finalImage = `${siteUrl}/og-image.jpg`;
+        if (image) {
+            if (image.startsWith('http')) {
+                finalImage = image;
+            } else if (image.startsWith('/uploads/')) {
+                // If it's an absolute path from the root, we need to decide if we prepend siteUrl
+                // Since SEO tags usually REQUIRE absolute URLs (with domain), we prepend siteUrl
+                // but we also need to account for the base subpath if it's part of the public structure.
+                const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+                finalImage = `${siteUrl}${baseUrl}${image}`;
+            } else {
+                finalImage = `${siteUrl}${image}`;
+            }
+        }
+        const finalUrl = url ? `${siteUrl}${import.meta.env.BASE_URL.replace(/\/$/, '')}${url}` : siteUrl;
 
         // Standard meta
         updateMeta('meta[name="description"]', finalDescription);

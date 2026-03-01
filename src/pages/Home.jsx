@@ -31,10 +31,13 @@ export default function Home() {
 
     useEffect(() => {
         getPosts().then(posts => {
-            setLatestPosts(posts.slice(0, 10));
+            setLatestPosts(posts);
             setHeroPosts(posts.slice(0, 5));
         });
     }, []);
+
+    const blogPosts = latestPosts.filter(p => p.type === 'blog').slice(0, 4);
+    const newsPosts = latestPosts.filter(p => p.type === 'haber').slice(0, 4);
 
     return (
         <div style={{ paddingTop: '80px' }}>
@@ -175,63 +178,97 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Latest Posts Section */}
+            {/* Latest Posts Section split into two columns */}
             <section style={{ padding: '80px 0' }} className="latest-posts">
                 <div className="container">
-                    <div className="section-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }}>
-                        <div>
-                            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '0.5rem' }}>Son <span style={{ color: 'var(--primary)' }}>Yazılar</span></h2>
-                            <p style={{ color: 'var(--text-muted)' }}>Hareketimizden en güncel haberler ve makaleler.</p>
-                        </div>
-                        <Link to="/blog" style={{ color: 'var(--primary)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.5rem' }} className="desktop-only">
-                            Tümünü Gör <ArrowRight size={18} />
-                        </Link>
-                    </div>
-
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                        gap: '1.5rem'
-                    }}>
-                        {latestPosts.map((post, idx) => (
-                            <motion.article
-                                key={post.slug}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className="home-blog-card glass"
-                                style={{ borderRadius: '20px', overflow: 'hidden' }}
-                            >
-                                <Link to={`/blog/${post.slug}`}>
-                                    <div style={{ aspectRatio: '16/9', background: '#222', position: 'relative' }}>
-                                        {post.image ? (
-                                            <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                                        ) : (
-                                            <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#333', fontSize: '2rem', fontWeight: 800 }}>
-                                                İSYANDAYIZ
-                                            </div>
-                                        )}
-                                    </div>
-                                    <div style={{ padding: '1.2rem' }}>
-                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--primary)', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.5rem' }}>
-                                            <Calendar size={14} />
-                                            {new Date(post.date).toLocaleDateString('tr-TR')}
-                                        </div>
-                                        <h3 style={{ fontSize: '1.2rem', marginBottom: '0.8rem', lineHeight: 1.3 }}>{post.title}</h3>
-                                        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                                            {post.description}
-                                        </p>
-                                    </div>
-                                </Link>
-                            </motion.article>
-                        ))}
-                    </div>
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))',
+                        gap: '4rem'
+                    }} className="split-grid">
 
-                    <div style={{ display: 'none', marginTop: '3rem', textAlign: 'center' }} className="mobile-only">
-                        <Link to="/blog" className="glass" style={{ padding: '1rem 2rem', borderRadius: '50px', color: 'var(--primary)', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                            Tüm Yazıları Gör <ArrowRight size={18} />
-                        </Link>
+                        {/* Blog Column */}
+                        <div>
+                            <div className="section-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>
+                                <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>Fikirler & <span style={{ color: 'var(--primary)' }}>Yazılar</span></h2>
+                                <Link to="/blog" style={{ color: 'var(--primary)', fontWeight: 600, fontSize: '0.9rem' }}>Tümünü Gör</Link>
+                            </div>
+
+                            <div style={{ display: 'grid', gap: '1.5rem' }}>
+                                {blogPosts.map((post, idx) => (
+                                    <motion.article
+                                        key={post.slug}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: idx * 0.1 }}
+                                        className="home-blog-card glass"
+                                        style={{ borderRadius: '20px', overflow: 'hidden', display: 'flex', gap: '1rem', padding: '1rem' }}
+                                    >
+                                        <Link to={`/blog/${post.slug}`} style={{ display: 'flex', gap: '1.2rem', width: '100%', alignItems: 'center' }}>
+                                            <div style={{ width: '120px', height: '80px', flexShrink: 0, borderRadius: '12px', overflow: 'hidden', background: '#222' }}>
+                                                {post.image ? (
+                                                    <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                ) : (
+                                                    <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#333', fontSize: '1rem', fontWeight: 800 }}>İSY</div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <div style={{ fontSize: '0.75rem', color: 'var(--primary)', fontWeight: 600, marginBottom: '0.3rem' }}>
+                                                    {new Date(post.date).toLocaleDateString('tr-TR')}
+                                                </div>
+                                                <h3 style={{ fontSize: '1.1rem', lineHeight: 1.3, marginBottom: '0.4rem' }}>{post.title}</h3>
+                                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                                                    {post.description}
+                                                </p>
+                                            </div>
+                                        </Link>
+                                    </motion.article>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* News Column */}
+                        <div>
+                            <div className="section-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', borderBottom: '1px solid var(--border)', paddingBottom: '1rem' }}>
+                                <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>Hareketten <span style={{ color: 'var(--secondary)' }}>Haberler</span></h2>
+                                <Link to="/haberler" style={{ color: 'var(--secondary)', fontWeight: 600, fontSize: '0.9rem' }}>Tümünü Gör</Link>
+                            </div>
+
+                            <div style={{ display: 'grid', gap: '1.5rem' }}>
+                                {newsPosts.map((post, idx) => (
+                                    <motion.article
+                                        key={post.slug}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: idx * 0.1 }}
+                                        className="home-blog-card glass"
+                                        style={{ borderRadius: '20px', overflow: 'hidden', display: 'flex', gap: '1rem', padding: '1rem' }}
+                                    >
+                                        <Link to={`/blog/${post.slug}`} style={{ display: 'flex', gap: '1.2rem', width: '100%', alignItems: 'center' }}>
+                                            <div style={{ width: '120px', height: '80px', flexShrink: 0, borderRadius: '12px', overflow: 'hidden', background: '#222' }}>
+                                                {post.image ? (
+                                                    <img src={post.image} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                ) : (
+                                                    <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#333', fontSize: '1rem', fontWeight: 800 }}>İSY</div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <div style={{ fontSize: '0.75rem', color: 'var(--secondary)', fontWeight: 600, marginBottom: '0.3rem' }}>
+                                                    {new Date(post.date).toLocaleDateString('tr-TR')}
+                                                </div>
+                                                <h3 style={{ fontSize: '1.1rem', lineHeight: 1.3, marginBottom: '0.4rem' }}>{post.title}</h3>
+                                                <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                                                    {post.description}
+                                                </p>
+                                            </div>
+                                        </Link>
+                                    </motion.article>
+                                ))}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -282,16 +319,23 @@ export default function Home() {
         .embla__container { display: flex; }
         .embla__slide { flex: 0 0 100%; min-width: 0; }
 
+        @media (max-width: 992px) {
+            .split-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+        }
         @media (max-width: 768px) {
             .desktop-only { display: none !important; }
             .mobile-only { display: block !important; }
-            .section-header { flex-direction: column !important; align-items: flex-start !important; gap: 1rem; }
-            .latest-posts { padding: 60px 0 !important; }
+            .section-header { flex-direction: row !important; align-items: center !important; }
+            .latest-posts { padding: 40px 0 !important; }
             .hero-desc { font-size: 1rem !important; margin-bottom: 2rem !important; }
             .btn-primary { padding: 0.8rem 1.5rem !important; width: 100%; border: none; justify-content: center; }
             .hero-content { text-align: center; }
             .hero-title { margin-left: auto; margin-right: auto; }
             .hero-desc { margin-left: auto; margin-right: auto; }
+            .home-blog-card { padding: 0.8rem !important; }
+            .home-blog-card a { gap: 0.8rem !important; }
+            .home-blog-card img, .home-blog-card div:first-child { width: 80px !important; height: 60px !important; }
+            .home-blog-card h3 { font-size: 1rem !important; }
         }
       `}} />
         </div>
