@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://isyandayiz.org/sitemap.xml
+Sitemap: https://feministisyan.org/sitemap.xml
