@@ -11,7 +11,7 @@ import YaziGonder from './pages/YaziGonder';
 
 function App() {
   return (
-    <Router basename="/isyandayiz-fe">
+    <Router>
       <div className="app">
         <Navbar />
         <main>
@@ -40,11 +40,11 @@ function App() {
               <div>
                 <h4 style={{ marginBottom: '1.2rem' }}>Bağlantılar</h4>
                 <ul style={{ listStyle: 'none', color: 'var(--text-muted)' }}>
-                  <li style={{ marginBottom: '0.8rem' }}><a href="/isyandayiz-fe/haberler">Haberler</a></li>
+                  <li style={{ marginBottom: '0.8rem' }}><Link to="/haberler">Haberler</Link></li>
                   {import.meta.env.DEV && (
                     <li style={{ marginBottom: '0.8rem' }}><a href="http://localhost:5173/admin/index.html">Admin Sayfası</a></li>
                   )}
-                  <li style={{ marginBottom: '0.8rem' }}><a href="/isyandayiz-fe/iletisim">İletişim</a></li>
+                  <li style={{ marginBottom: '0.8rem' }}><Link to="/iletisim">İletişim</Link></li>
                 </ul>
               </div>
               <div>

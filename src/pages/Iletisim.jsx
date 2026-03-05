@@ -37,7 +37,7 @@ export default function Iletisim() {
                         <h2 style={{ fontSize: '1.8rem', marginBottom: '2rem' }}>İletişim Bilgilerimiz</h2>
                         <div style={{ display: 'grid', gap: '1.5rem' }}>
                             {[
-                                { icon: <Mail color="var(--primary)" />, title: 'E-posta', val: 'merkez@isyandayiz.org' },
+                                { icon: <Mail color="var(--primary)" />, title: 'E-posta', val: 'merkez@feministisyan.org' },
                                 { icon: <Phone color="var(--primary)" />, title: 'Telefon', val: '+90 212 XXX XX XX' },
                                 { icon: <MapPin color="var(--primary)" />, title: 'Merkez', val: 'Kadıköy, İstanbul' }
                             ].map((item, idx) => (

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const SITE_URL = 'https://isyandayiz.org';
+const SITE_URL = 'https://feministisyan.org';
 const CONTENT_DIRS = [
     'src/content/blog',
     'src/content/haberler'

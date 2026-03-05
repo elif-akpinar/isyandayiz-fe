@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 const SEO = ({ title, description, image, url }) => {
     const defaultTitle = 'İSYANDAYIZ | Eşitlik ve Dayanışma Hareketi';
     const defaultDescription = 'Isyandayiz, toplumsal cinsiyet eşitliği ve sosyal adalet için mücadele eden radikal bir siyasi harekettir.';
-    const siteUrl = 'https://isyandayiz.org'; // Replace with actual URL
+    const siteUrl = 'https://feministisyan.org'; // Replace with actual URL
 
     useEffect(() => {
         // Update Document Title
